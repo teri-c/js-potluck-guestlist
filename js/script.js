@@ -81,8 +81,18 @@ const assignItems = function () {
     for (let guest of allGuests) {
         let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
         let randomPotluckItem = potluckItems[randomPotluckIndex];
+        
         let listItem = document.createElement("li");
         listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
         assignedItems.append(listItem);
+        
+        potluckItems.splice(randomPotluckIndex, 1);
     }
 };
+
+// Add an event listener & update PotluckItems Array
+
+assignButton.addEventListener("click", function () {
+    assignItems();
+    assignButton.disabled = true;
+});
