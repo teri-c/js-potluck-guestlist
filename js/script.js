@@ -53,5 +53,4 @@ const updateGuestCount = function () {
         guestInputLabel.classList.add("hide");
         guestFull.classList.remove("hide");
     }
-
 };
